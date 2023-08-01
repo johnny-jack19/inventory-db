@@ -1,4 +1,5 @@
 import express from "express";
+import cors from "cors";
 
 import {
   getStudents,
@@ -13,7 +14,7 @@ import {
 } from "./database/calls.js";
 
 const app = express();
-
+app.use(cors());
 app.use(express.json());
 
 app.get("/students", async (req, res) => {
